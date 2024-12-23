@@ -1,9 +1,6 @@
-// import the Gupter font
-import { Mukta } from "next/font/google";
 import ThemeProviderWrapper from "../themproviderwrapper/ThemeProviderWrapper";
-// import Header from "./header/page";
-
-const mukta = Mukta({ weight: "400", subsets: ["latin"] });
+import Footer from "@/components/footer/Footer";
+import Header from "@/components/header/Header";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,9 +10,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={mukta.className}>
-        {/* <Header /> */}
+      <head>
+        {/* Add Reddit Sans font from Google Fonts */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
+        <Header />
         <ThemeProviderWrapper>{children}</ThemeProviderWrapper>
+        <Footer />
       </body>
     </html>
   );
