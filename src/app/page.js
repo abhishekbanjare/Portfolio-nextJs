@@ -8,13 +8,11 @@ import Footer from "./footer/page";
 export default function Home() {
   return (
     <main>
-      <Header />
       <Homepage />
       <About />
       <Skills />
       <Project />
       <Contact />
-      <Footer />
     </main>
   );
 }
