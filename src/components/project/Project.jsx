@@ -7,6 +7,7 @@ import {
   Card,
   CardContent,
   CardMedia,
+  Divider,
 } from "@mui/material";
 import React from "react";
 import CustomGridLayout from "../customfile/linkedinCustom";
@@ -42,18 +43,19 @@ export default function Project() {
     <Box
       id="projects"
       sx={{
+       
         backgroundColor: "#0C1E2C",
         color: "#fff",
       }}
     >
-      <Container sx={{ py: 3, border: "1px solid red" }}>
+      <Container sx={{ py: 7 }}>
         <Grid>
           <Typography
             variant="h3"
             align="center"
             sx={{ paddingBottom: "20px" }}
           >
-            My Works
+            Selected Works
           </Typography>
         </Grid>
         {/* .................. */}
@@ -101,6 +103,7 @@ export default function Project() {
                     <Button
                       variant="contained"
                       sx={{
+                        fontSize: "16px",
                         backgroundColor: "#0C1E2C",
                         color: "#fff",
                         px: 3,
@@ -135,6 +138,14 @@ export default function Project() {
           ))}
         </Grid>
       </Container>
+      <Divider
+        sx={{
+          backgroundColor: "#ff3f34",
+          width: "66%",
+          margin: "0px",
+          mx: "auto",
+        }}
+      />
     </Box>
   );
 }

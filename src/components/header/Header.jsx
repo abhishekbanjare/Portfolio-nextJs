@@ -45,7 +45,7 @@ export default function DrawerAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        Akash
+        Portfolio.
       </Typography>
       <Divider />
       <List>
@@ -96,7 +96,7 @@ export default function DrawerAppBar(props) {
               },
             }}
           >
-            Akash
+            Portfolio.
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
