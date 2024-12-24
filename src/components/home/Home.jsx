@@ -10,7 +10,7 @@ export default function Home() {
         backgroundImage: "url('/img/home/backgroundimg2.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        minHeight: "80vh",
+        minHeight: "70vh",
       }}
     >
       <Container>
@@ -24,22 +24,23 @@ export default function Home() {
               flexDirection: "column",
               justifyContent: "center",
               color: "#fff",
-
-              height: "100vh",
+              height: { xs: "60vh", sm: "100vh" },
               padding: "4px",
             }}
           >
             <Grid>
               <Typography variant="h6">Hello, my name is</Typography>
               <Typography variant="h1">Abhishek Banjare</Typography>
-              <Typography variant="h2">And i'm a Software Developer</Typography>
+              <Typography variant="h2">And i&apos;m a Software Developer</Typography>
               <Typography>
                 <Button
                   variant="contained"
                   sx={{
+                    fontSize: "16px",
                     backgroundColor: "#0C1E2C",
                     color: "#fff",
                     boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.3)",
+                    textTransform: "none",
                     transition: "all 0.3s ease",
                     "&:hover": {
                       backgroundColor: "#001219",
@@ -47,7 +48,7 @@ export default function Home() {
                     },
                   }}
                 >
-                  Read More
+                  Hire me
                 </Button>
               </Typography>
             </Grid>

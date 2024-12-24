@@ -16,20 +16,13 @@ export default function Contact() {
     <Box
       id="contact"
       sx={{
-        paddingTop: "40px",
-        paddingBottom: "40px",
-        backgroundColor: "#edede9",
+        // border: "1px solid red",
+
+        backgroundColor: "#0C1E2C",
+        color: "#fff",
       }}
-      // sx={{
-      //   paddingTop: "40px",
-      //   backgroundImage: "url('img/background/img1.jpg')",
-      //   backgroundSize: "cover",
-      //   backgroundPosition: "center",
-      //   backgroundRepeat: "no-repeat",
-      //   color: "#fff",
-      // }}
     >
-      <Container sx={{ marginBottom: "40px" }}>
+      <Container sx={{ py: 7 }}>
         <Grid container justifyContent="center">
           <Grid
             item
@@ -38,16 +31,18 @@ export default function Contact() {
             alignItems="center"
             sx={{ marginBottom: 2 }}
           >
-            <Typography variant="h4" align="center">
+            <Typography variant="h3" align="center">
               Contact Me
             </Typography>
-            <Typography>--get in touch--</Typography>
+            <Typography variant="subtitle1" sx={{ color: "#ff4d4d" }}>
+              --get in touch--
+            </Typography>
           </Grid>
-          <Grid item container textAlign="justify" display="flex">
+          <Grid item container spacing={4} textAlign="justify" display="flex">
             {/* First Grid item */}
-            <Grid item xs={12} sm={6} padding={4}>
-              <Typography variant="h5">Get in Touch</Typography>
-              <Typography sx={{ marginBottom: "20px" }}>
+            <Grid item xs={12} sm={6}>
+              <Typography variant="h4">Get in Touch</Typography>
+              <Typography variant="subtitle1" sx={{ marginBottom: "20px" }}>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit
                 tempore explicabo dolorum ratione corporis non accusamus maxime
                 omnis quo est!
@@ -60,11 +55,11 @@ export default function Contact() {
                     sx={{ display: "flex", alignItems: "center" }}
                   >
                     <Box item sx={{ marginRight: "20px" }}>
-                      <item.icon />
+                      <item.icon sx={{ fontSize: "1.8rem" }} />
                     </Box>
                     <Box sx={{ marginBottom: "15px" }}>
-                      <Typography>{item.name}:</Typography>
-                      <Typography>{item.value}</Typography>
+                      <Typography variant="subtitle2">{item.name}:</Typography>
+                      <Typography variant="subtitle2">{item.value}</Typography>
                     </Box>
                   </Grid>
                 ))}
@@ -76,12 +71,17 @@ export default function Contact() {
                 container
                 component="form"
                 sx={{
-                  "& .MuiTextField-root": { m: 1 },
+                  "& .MuiTextField-root": {
+                    m: 1,
+                    input: { color: "#fff" },
+                    label: { color: "#fff" },
+                    fieldset: { borderColor: "#fff" },
+                  },
                 }}
                 noValidate
                 autoComplete="off"
               >
-                <Typography variant="h5">Message me</Typography>
+                <Typography variant="h4">Message me</Typography>
                 {/* Name and Email in a single row */}
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
@@ -105,7 +105,23 @@ export default function Contact() {
                 </Grid>
               </Box>
               <Box sx={{ marginTop: 2 }}>
-                <Button variant="contained">Send Message</Button>
+                <Button
+                  variant="contained"
+                  sx={{
+                    fontSize: "16px",
+                    backgroundColor: "#0C1E2C",
+                    color: "#fff",
+                    boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.3)",
+                    textTransform: "none",
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      backgroundColor: "#001219",
+                      boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.4)",
+                    },
+                  }}
+                >
+                  Send Message
+                </Button>
               </Box>
             </Grid>
           </Grid>

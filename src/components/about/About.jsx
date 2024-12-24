@@ -18,7 +18,7 @@ export default function About() {
         color: "#fff",
       }}
     >
-      <Container sx={{ py: 3 }}>
+      <Container sx={{  py:7, }}>
         <Grid container justifyContent="center">
           <Grid
             item
@@ -93,7 +93,7 @@ export default function About() {
             <Grid item xs={12} sm={7} sx={{ textAlign: "justify" }}>
               <Box sx={{ marginBottom: { xs: 2, sm: 3, md: 4 } }}>
                 <Typography variant="h4" gutterBottom>
-                  I'm Abhishek and I'm a Website Developer
+                  I&apos;m Abhishek and I&apos;m a Website Developer
                 </Typography>
                 {/* <br /> */}
                 <Typography variant="subtitle1" gutterBottom>

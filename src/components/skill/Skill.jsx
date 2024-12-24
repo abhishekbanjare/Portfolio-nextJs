@@ -36,7 +36,7 @@ export default function Skill() {
         color: "#fff",
       }}
     >
-      <Container sx={{ py: 3 }}>
+      <Container sx={{ py: 7 }}>
         <Grid container justifyContent="center">
           <Grid
             item
@@ -47,20 +47,15 @@ export default function Skill() {
             sx={{ marginBottom: 2 }}
           >
             <Typography variant="h3" align="center">
-              My Skills
+              Skills Set
             </Typography>
             <Typography variant="subtitle1" sx={{ color: "#ff4d4d" }}>
               --What I know--
             </Typography>
           </Grid>
-          <Grid item container spacing={2}>
+          <Grid item container spacing={4}>
             {/* first grid item */}
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              sx={{ border: "1px solid red", textAlign: "justify" }}
-            >
+            <Grid item xs={12} sm={6} sx={{ textAlign: "justify" }}>
               <Typography variant="h4">
                 My creative skills & experiences
               </Typography>
@@ -72,7 +67,7 @@ export default function Skill() {
               <br />
               <Typography variant="subtitle1">
                 As a passionate individual dedicated to creativity and
-                innovation, I've accumulated a diverse set of skills and
+                innovation, I&apos;ve accumulated a diverse set of skills and
                 valuable experiences across various domains.
               </Typography>
               <br />
@@ -84,9 +79,11 @@ export default function Skill() {
                 <Button
                   variant="contained"
                   sx={{
+                    fontSize: "16px",
                     backgroundColor: "#0C1E2C",
                     color: "#fff",
                     boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.3)",
+                    textTransform: "none",
                     transition: "all 0.3s ease",
                     "&:hover": {
                       backgroundColor: "#001219",
@@ -108,7 +105,6 @@ export default function Skill() {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                border: "1px solid red",
               }}
             >
               {skills.map((skill, index) => (
