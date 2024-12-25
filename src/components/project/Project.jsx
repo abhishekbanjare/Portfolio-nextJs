@@ -1,3 +1,4 @@
+"use client";
 import {
   Box,
   Button,
@@ -11,51 +12,72 @@ import {
 } from "@mui/material";
 import React from "react";
 import CustomGridLayout from "../customfile/linkedinCustom";
+import theme from "@/theme/theme";
 const projectsObj = [
   {
     title: "Portfolio Website",
     image: "/img/myWorks_img/project1.jpg",
-    link: "https://example.com/portfolio",
+    live: "https://raj-landing-page.netlify.app/",
+    source: "https://example.com/ecommerce",
   },
   {
     title: "E-Commerce App",
     image: "/img/myWorks_img/project2.jpg",
-    link: "https://example.com/ecommerce",
+    live: "https://gouthami-landing-page.netlify.app/",
+    source: "https://example.com/ecommerce",
   },
   {
     title: "E-Commerce App",
     image: "/img/myWorks_img/project3.png",
-    link: "https://example.com/ecommerce",
+    live: "https://example.com/ecommerce",
+    source: "https://example.com/ecommerce",
   },
   {
     title: "E-Commerce App",
     image: "/img/myWorks_img/project4.jpg",
-    link: "https://example.com/ecommerce",
+    live: "https://example.com/ecommerce",
+    source: "https://example.com/ecommerce",
   },
   {
     title: "E-Commerce App",
     image: "/img/myWorks_img/project5.jpg",
-    link: "https://example.com/ecommerce",
+    live: "https://example.com/ecommerce",
+    source: "https://example.com/ecommerce",
   },
 ];
 export default function Project() {
+  const handleButtonLive = (live) => {
+    window.open(live, "_blank");
+  };
+  const handleButtonSourceCode = (source) => {
+    window.open(source, "_blank");
+  };
   return (
     <Box
       id="projects"
       sx={{
-       
         backgroundColor: "#0C1E2C",
         color: "#fff",
       }}
     >
       <Container sx={{ py: 7 }}>
-        <Grid>
-          <Typography
-            variant="h3"
-            align="center"
-            sx={{ paddingBottom: "20px" }}
-          >
+        <Grid
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            marginBottom: { xs: 3, sm: 4, md: 6 },
+          }}
+        >
+          <Typography variant="h3" align="center">
             Selected Works
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            sx={{ color: theme.palette.crimson.main }}
+          >
+            --Explore My Work--
           </Typography>
         </Grid>
         {/* .................. */}
@@ -83,7 +105,7 @@ export default function Project() {
                     variant="h5"
                     component="div"
                     gutterBottom
-                    sx={{ color: "#0C1E2C" }}
+                    sx={{ color: theme.palette.charcoalBlue.main }}
                   >
                     {project.title}
                   </Typography>
@@ -101,33 +123,36 @@ export default function Project() {
                 <CardContent>
                   <Box display="flex" justifyContent="space-between">
                     <Button
-                      variant="contained"
+                      variant="outlined"
                       sx={{
-                        fontSize: "16px",
-                        backgroundColor: "#0C1E2C",
+                        // width: { xs: "80%", sm: "80%", md: "30%" },
+                        backgroundColor: theme.palette.charcoalBlue.main,
                         color: "#fff",
-                        px: 3,
                         textTransform: "none",
-                        // boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.3)",
-                        transition: "all 0.3s ease",
+                        transition: "all 0.7s ease-in-out",
                         "&:hover": {
-                          backgroundColor: "#001219", // Hover background color
-                          boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.3)", // Hover shadow effect
+                          backgroundColor: "transparent",
+                          color: theme.palette.charcoalBlue.main,
+                          borderColor: theme.palette.charcoalBlue.main,
+                          boxShadow: "none",
+                          transition: "all 0.3s ease-in-out",
                         },
                       }}
+                      onClick={() => handleButtonLive(project.live)}
                     >
                       Live
                     </Button>
                     <Button
                       variant="outlined"
                       sx={{
-                        color: "#0C1E2C",
-                        borderColor: "#0C1E2C",
+                        color: theme.palette.charcoalBlue.main,
+                        borderColor: theme.palette.charcoalBlue.main,
                         "&:hover": {
-                          color: "#0C1E2C",
-                          borderColor: "#0C1E2C",
+                          color: theme.palette.crimson.main,
+                          borderColor: theme.palette.crimson.main,
                         },
                       }}
+                      onClick={() => handleButtonSourceCode(project.source)}
                     >
                       Source Code
                     </Button>

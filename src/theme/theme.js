@@ -1,18 +1,16 @@
 "use client";
 import { createTheme } from "@mui/material";
-
 const breakpoints = {
   lg: "@media (max-width: 1280px)",
   md: "@media (max-width: 1024px)",
   sm: "@media (max-width: 600px)",
   xs: "@media (max-width: 400px)",
 };
-
 const theme = createTheme({
   typography: {
-    // Apply 'Reddit Sans' globally
     fontFamily: "'Reddit Sans', sans-serif",
 
+    // Headings customization (h1 to h6)
     h1: {
       fontSize: "3rem",
       fontWeight: 700,
@@ -112,21 +110,19 @@ const theme = createTheme({
   },
   components: {
     // Button typography customization
-    components: {
-      MuiButton: {
-        styleOverrides: {
-          root: {
-            // Apply 'Reddit Sans' specifically to buttons
-            fontFamily: "'Reddit Sans', sans-serif",
-          },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          fontFamily: "'Reddit Sans', sans-serif",
         },
       },
     },
   },
   palette: {
-    charcoalBlue: { main: "#0C1E2C" },
-    lightRed:{main:"#0C1E2C"}
+    charcoalBlue: { main: "#0C1E2C" }, //all background color
+    blackPearl: { main: "#001219" }, //hover button color
+
+    crimson: { main: "#DC143C" }, // Change 'Crimson' to 'crimson'
   },
 });
-
 export default theme;
