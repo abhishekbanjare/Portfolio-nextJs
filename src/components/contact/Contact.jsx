@@ -4,6 +4,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
 import TextField from "@mui/material/TextField";
+import theme from "@/theme/theme";
 import { Grid4x4TwoTone } from "@mui/icons-material";
 
 export default function Contact() {
@@ -12,6 +13,20 @@ export default function Contact() {
     { icon: LocationOnIcon, name: "Address", value: "Raipur Chhatisgarh" },
     { icon: EmailIcon, name: "Email", value: "Suryaabhishek329@gmail.com" },
   ];
+
+  const textFieldStyles = {
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": { borderColor: "#fff" }, // Default border color
+      "&:hover fieldset": { borderColor: theme.palette.crimson.main }, // Hover color
+      "&.Mui-focused fieldset": {
+        borderColor: "#fff", // Focus color
+        borderWidth: "2px", // Thicker border
+      },
+    },
+    input: { color: "#fff" },
+    label: { color: "#fff" },
+  };
+
   return (
     <Box
       id="contact"
@@ -34,7 +49,10 @@ export default function Contact() {
             <Typography variant="h3" align="center">
               Contact Me
             </Typography>
-            <Typography variant="subtitle1" sx={{ color: "#ff4d4d" }}>
+            <Typography
+              variant="subtitle1"
+              sx={{ color: theme.palette.crimson.main }}
+            >
               --get in touch--
             </Typography>
           </Grid>
@@ -66,13 +84,13 @@ export default function Contact() {
               </Box>
             </Grid>
             {/* Second Grid item */}
-            <Grid item xs={12} sm={6} padding={4}>
+            <Grid item xs={12} sm={6}>
               <Box
                 container
                 component="form"
                 sx={{
                   "& .MuiTextField-root": {
-                    m: 1,
+                    // mb: 2,
                     input: { color: "#fff" },
                     label: { color: "#fff" },
                     fieldset: { borderColor: "#fff" },
@@ -85,37 +103,61 @@ export default function Contact() {
                 {/* Name and Email in a single row */}
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
-                    <TextField id="outlined-name" label="Name" fullWidth />
+                    <TextField
+                      id="outlined-name"
+                      label="Name"
+                      fullWidth
+                      sx={textFieldStyles}
+                    />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <TextField id="outlined-email" label="Email" fullWidth />
+                    <TextField
+                      id="outlined-email"
+                      label="Email"
+                      fullWidth
+                      sx={textFieldStyles}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <TextField
+                      id="outlined-subject"
+                      label="Subject"
+                      fullWidth
+                      sx={textFieldStyles}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      id="outlined-message"
+                      label="Message.."
+                      fullWidth
+                      multiline
+                      rows={2}
+                      sx={textFieldStyles}
+                    />
                   </Grid>
                 </Grid>
-                <Grid item xs={12}>
-                  <TextField id="outlined-subject" label="Subject" fullWidth />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    id="outlined-message"
-                    label="Message.."
-                    fullWidth
-                    multiline
-                    rows={2}
-                  />
-                </Grid>
               </Box>
-              <Box sx={{ marginTop: 2 }}>
+              <Box
+                sx={{
+                  marginTop: 2,
+                  display: "flex",
+                  justifyContent: { xs: "center", sm: "left" },
+                  alignItems: "center",
+                }}
+              >
                 <Button
                   variant="contained"
                   sx={{
-                    fontSize: "16px",
-                    backgroundColor: "#0C1E2C",
+                    width: { xs: "80%", sm: "50%", md: "30%" },
+                    backgroundColor: theme.palette.charcoalBlue.main,
                     color: "#fff",
                     boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.3)",
-                    textTransform: "none",
                     transition: "all 0.3s ease",
                     "&:hover": {
-                      backgroundColor: "#001219",
+                      color: theme.palette.crimson.main,
+                      backgroundColor: theme.palette.blackPearl.main,
                       boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.4)",
                     },
                   }}

@@ -14,9 +14,10 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import theme from "@/theme/theme";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Skills", "Projects", "Contact"];
+const navItems = ["Home", "About", "Skills", "Projects","Gallery", "Contact"];
 
 export default function DrawerAppBar(props) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -45,7 +46,7 @@ export default function DrawerAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        Portfolio.
+        Portfo<span style={{ color: theme.palette.crimson.main }}>lio.</span>
       </Typography>
       <Divider />
       <List>
@@ -96,7 +97,8 @@ export default function DrawerAppBar(props) {
               },
             }}
           >
-            Portfolio.
+            Portfo
+            <span style={{ color: theme.palette.crimson.main }}>lio.</span>
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (

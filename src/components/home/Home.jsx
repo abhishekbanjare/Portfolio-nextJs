@@ -1,7 +1,11 @@
+"use client";
 import React from "react";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { Typewriter } from "react-simple-typewriter";
+
+import theme from "@/theme/theme";
 export default function Home() {
   return (
     <Grid
@@ -18,8 +22,9 @@ export default function Home() {
           <Grid
             item
             xs={12}
-            sm={6}
+            sm={7}
             sx={{
+              // border: "1px solid blue",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -31,24 +36,44 @@ export default function Home() {
             <Grid>
               <Typography variant="h6">Hello, my name is</Typography>
               <Typography variant="h1">Abhishek Banjare</Typography>
-              <Typography variant="h2">And i&apos;m a Software Developer</Typography>
+              <Typography variant="h2">
+                And i&apos;m a{" "}
+                <span style={{ color: theme.palette.crimson.main }}>
+                  <Typewriter
+                    words={[
+                      "Software Developer",
+                      "Website Developer",
+                      "ReactJs Developer",
+                      "NextJs Developer",
+                    ]}
+                    loop={0} // Infinite loop
+                    cursor
+                    cursorStyle="|"
+                    typeSpeed={70}
+                    deleteSpeed={40}
+                    delaySpeed={1000}
+                  />
+                </span>
+              </Typography>
               <Typography>
                 <Button
                   variant="contained"
                   sx={{
-                    fontSize: "16px",
-                    backgroundColor: "#0C1E2C",
+                    fontSize: { xs: "14px", sm: "15px", md: "16px" },
+                    backgroundColor: theme.palette.charcoalBlue.main,
                     color: "#fff",
                     boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.3)",
-                    textTransform: "none",
+                    // textTransform: "none",
                     transition: "all 0.3s ease",
+                    width: { xs: "40%", sm: "40%", md: "26%" },
                     "&:hover": {
-                      backgroundColor: "#001219",
+                      backgroundColor: theme.palette.blackPearl.main,
+                      color: theme.palette.crimson.main,
                       boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.4)",
                     },
                   }}
                 >
-                  Hire me
+                  Hire Me
                 </Button>
               </Typography>
             </Grid>
@@ -57,28 +82,26 @@ export default function Home() {
             item
             sm={4}
             sx={{
+              // border: "1px solid red",
               display: {
                 xs: "none",
                 sm: "flex",
               },
-
               justifyContent: "center",
               alignItems: "center",
-
               height: "100vh",
-              padding: "4px",
             }}
           >
             <Image
-              src="/img/home/abhishekabc.jpg"
+              src="/img/home/abhishekabc2.jpg"
               alt="Description"
               layout="responsive"
               width={500}
               height={300}
               style={{
                 maxWidth: "80%",
-                maxHeight: "80vh",
-                border: "10px solid #1e272e",
+                maxHeight: "90vh",
+                border: "6px solid #1e272e",
                 borderRadius: "0px 30px 0px 30px",
               }}
             />

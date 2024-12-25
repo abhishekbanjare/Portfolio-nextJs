@@ -1,3 +1,4 @@
+"use client";
 import {
   Box,
   Button,
@@ -7,18 +8,19 @@ import {
   Typography,
 } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import theme from "@/theme/theme";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function About() {
   return (
     <Box
       id="about"
       sx={{
-        backgroundColor: "#0C1E2C",
+        backgroundColor: theme.palette.charcoalBlue.main,
         color: "#fff",
       }}
     >
-      <Container sx={{  py:7, }}>
+      <Container sx={{ py: 7 }}>
         <Grid container justifyContent="center">
           <Grid
             item
@@ -31,7 +33,10 @@ export default function About() {
             <Typography variant="h3" align="center">
               About me
             </Typography>
-            <Typography variant="subtitle1" sx={{ color: "#ff4d4d" }}>
+            <Typography
+              variant="subtitle1"
+              sx={{ color: theme.palette.crimson.main }}
+            >
               --Who I am--
             </Typography>
           </Grid>
@@ -93,7 +98,23 @@ export default function About() {
             <Grid item xs={12} sm={7} sx={{ textAlign: "justify" }}>
               <Box sx={{ marginBottom: { xs: 2, sm: 3, md: 4 } }}>
                 <Typography variant="h4" gutterBottom>
-                  I&apos;m Abhishek and I&apos;m a Website Developer
+                  I&apos;m Abhishek and I&apos;m a{" "}
+                  <span style={{ color: theme.palette.crimson.main }}>
+                    <Typewriter
+                      words={[
+                        "Software Developer",
+                        "Website Developer",
+                        "ReactJs Developer",
+                        "NextJs Developer",
+                      ]}
+                      loop={0} // Infinite loop
+                      cursor
+                      cursorStyle="|"
+                      typeSpeed={70}
+                      deleteSpeed={40}
+                      delaySpeed={1000}
+                    />
+                  </span>
                 </Typography>
                 {/* <br /> */}
                 <Typography variant="subtitle1" gutterBottom>
@@ -104,17 +125,29 @@ export default function About() {
                   growing in a fast-paced environment.
                 </Typography>
               </Box>
-              <Box>
+              <Box
+                sx={{
+                  // border: "1px solid red",
+                  display: "flex",
+                  justifyContent: { xs: "center", md: "left" },
+                  alignItems: "center",
+                }}
+              >
                 <Button
                   variant="contained"
+                  href="/pdfs/AbhishekResume.pdf" // Relative path to the file
+                  target="_blank" // Opens in a new tab
+                  rel="noopener noreferrer" // Security best practice
                   sx={{
-                    backgroundColor: "#0C1E2C",
+                    width: { xs: "80%", sm: "80%", md: "30%" },
+                    backgroundColor: theme.palette.charcoalBlue.main,
                     color: "#fff",
                     boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.3)",
                     transition: "all 0.3s ease",
                     "&:hover": {
-                      backgroundColor: "#001219", // Hover background color
-                      boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.4)", // Hover shadow effect
+                      color: theme.palette.crimson.main,
+                      backgroundColor: theme.palette.blackPearl.main,
+                      boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.4)",
                     },
                   }}
                 >

@@ -19,7 +19,7 @@ export default function Footer() {
           <IconButton
             aria-label="LinkedIn"
             component={Link}
-            href="https://www.linkedin.com/feed/"
+            href="https://www.linkedin.com/in/abhishek-banjare-425b61251/"
             target="_blank"
             sx={{ color: "#ffffff" }}
           >
@@ -46,7 +46,7 @@ export default function Footer() {
           <IconButton
             aria-label="Instagram"
             component={Link}
-            href="https://www.instagram.com/your-instagram-username"
+            href="https://www.instagram.com/imabhishekk02/profilecard/?igsh=MmdwNGxxZ3o3d3pk"
             target="_blank"
             sx={{ color: "#ffffff" }}
           >
