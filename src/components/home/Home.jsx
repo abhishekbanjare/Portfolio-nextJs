@@ -58,8 +58,10 @@ export default function Home() {
               <Typography>
                 <Button
                   variant="contained"
+                  href="/pdfs/AbhishekResume.pdf" // Relative path to the file
+                  target="_blank" // Opens in a new tab
+                  rel="noopener noreferrer" // Security best practice
                   sx={{
-                    fontSize: { xs: "14px", sm: "15px", md: "16px" },
                     backgroundColor: theme.palette.charcoalBlue.main,
                     color: "#fff",
                     boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.3)",
