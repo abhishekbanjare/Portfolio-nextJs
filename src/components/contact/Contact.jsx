@@ -1,11 +1,11 @@
 "use client";
+import React, { useState } from "react";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
 import TextField from "@mui/material/TextField";
 import theme from "@/theme/theme";
-import { Grid4x4TwoTone } from "@mui/icons-material";
 
 export default function Contact() {
   const contactDetails = [
@@ -22,17 +22,46 @@ export default function Contact() {
         borderColor: "#fff", // Focus color
         borderWidth: "2px", // Thicker border
       },
+      input: { color: "#fff" },
+      "&.Mui-focused input": { color: "#fff" },
     },
-    input: { color: "#fff" },
-    label: { color: "#fff" },
+    "& .MuiInputLabel-root": { color: "#fff" }, // Label color
+    "& .MuiInputLabel-root.Mui-focused": { color: "#fff" },
+    "& .MuiInputBase-inputMultiline": { color: "#fff" }, // Multiline input color
+  };
+
+  const [formValues, setFormValues] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormValues({
+      ...formValues,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Here you can handle form submission, e.g., sending data to a server
+
+    // Clear the form fields after submission
+    setFormValues({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
   };
 
   return (
     <Box
       id="contact"
       sx={{
-        // border: "1px solid red",
-
         backgroundColor: "#0C1E2C",
         color: "#fff",
       }}
@@ -86,11 +115,9 @@ export default function Contact() {
             {/* Second Grid item */}
             <Grid item xs={12} sm={6}>
               <Box
-                container
                 component="form"
                 sx={{
                   "& .MuiTextField-root": {
-                    // mb: 2,
                     input: { color: "#fff" },
                     label: { color: "#fff" },
                     fieldset: { borderColor: "#fff" },
@@ -98,6 +125,7 @@ export default function Contact() {
                 }}
                 noValidate
                 autoComplete="off"
+                onSubmit={handleSubmit}
               >
                 <Typography variant="h4">Message me</Typography>
                 {/* Name and Email in a single row */}
@@ -105,16 +133,22 @@ export default function Contact() {
                   <Grid item xs={12} sm={6}>
                     <TextField
                       id="outlined-name"
+                      name="name"
                       label="Name"
                       fullWidth
+                      value={formValues.name}
+                      onChange={handleChange}
                       sx={textFieldStyles}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <TextField
                       id="outlined-email"
+                      name="email"
                       label="Email"
                       fullWidth
+                      value={formValues.email}
+                      onChange={handleChange}
                       sx={textFieldStyles}
                     />
                   </Grid>
@@ -122,48 +156,55 @@ export default function Contact() {
                   <Grid item xs={12}>
                     <TextField
                       id="outlined-subject"
+                      name="subject"
                       label="Subject"
                       fullWidth
+                      value={formValues.subject}
+                      onChange={handleChange}
                       sx={textFieldStyles}
                     />
                   </Grid>
                   <Grid item xs={12}>
                     <TextField
                       id="outlined-message"
+                      name="message"
                       label="Message.."
                       fullWidth
                       multiline
                       rows={2}
+                      value={formValues.message}
+                      onChange={handleChange}
                       sx={textFieldStyles}
                     />
                   </Grid>
                 </Grid>
-              </Box>
-              <Box
-                sx={{
-                  marginTop: 2,
-                  display: "flex",
-                  justifyContent: { xs: "center", sm: "left" },
-                  alignItems: "center",
-                }}
-              >
-                <Button
-                  variant="contained"
+                <Box
                   sx={{
-                    width: { xs: "80%", sm: "50%", md: "30%" },
-                    backgroundColor: theme.palette.charcoalBlue.main,
-                    color: "#fff",
-                    boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.3)",
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      color: theme.palette.crimson.main,
-                      backgroundColor: theme.palette.blackPearl.main,
-                      boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.4)",
-                    },
+                    marginTop: 2,
+                    display: "flex",
+                    justifyContent: { xs: "center", sm: "left" },
+                    alignItems: "center",
                   }}
                 >
-                  Send Message
-                </Button>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    sx={{
+                      width: { xs: "80%", sm: "50%", md: "30%" },
+                      backgroundColor: theme.palette.charcoalBlue.main,
+                      color: "#fff",
+                      boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.3)",
+                      transition: "all 0.3s ease",
+                      "&:hover": {
+                        color: theme.palette.crimson.main,
+                        backgroundColor: theme.palette.blackPearl.main,
+                        boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.4)",
+                      },
+                    }}
+                  >
+                    Send Message
+                  </Button>
+                </Box>
               </Box>
             </Grid>
           </Grid>

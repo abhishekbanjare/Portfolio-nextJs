@@ -106,7 +106,11 @@ const Gallery = () => {
               />
               <Typography
                 variant="subtitle1"
-                sx={{ marginTop: "0.5rem", fontWeight: "500" }}
+                textAlign="center"
+                sx={{
+                  marginTop: "0.5rem",
+                  fontWeight: "500",
+                }}
               >
                 {image.alt}
               </Typography>
