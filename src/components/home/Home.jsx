@@ -95,7 +95,10 @@ export default function Home() {
             }}
           >
             <Image
-              src="/img/home/abhishekabc2.jpg"
+              // src="/img/home/abhishek1.jpg"
+              // src="/img/home/abhishek2.jpg"
+              // src="/img/home/abhishek3.jpg"
+              src="/img/home/abhishek4.jpg"
               alt="Description"
               layout="responsive"
               width={500}
