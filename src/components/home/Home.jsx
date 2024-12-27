@@ -2,7 +2,6 @@
 import React from "react";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import { Typewriter } from "react-simple-typewriter";
 
 import theme from "@/theme/theme";
@@ -24,7 +23,6 @@ export default function Home() {
             xs={12}
             sm={7}
             sx={{
-              // border: "1px solid blue",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -58,14 +56,13 @@ export default function Home() {
               <Typography>
                 <Button
                   variant="contained"
-                  href="/pdfs/AbhishekResume.pdf" // Relative path to the file
+                  href="/pdfs/AbhishekResume.pdf"
                   target="_blank" // Opens in a new tab
                   rel="noopener noreferrer" // Security best practice
                   sx={{
                     backgroundColor: theme.palette.charcoalBlue.main,
                     color: "#fff",
                     boxShadow: "0px 6px 10px rgba(0, 0, 0, 0.3)",
-                    // textTransform: "none",
                     transition: "all 0.3s ease",
                     width: { xs: "40%", sm: "40%", md: "26%" },
                     "&:hover": {
