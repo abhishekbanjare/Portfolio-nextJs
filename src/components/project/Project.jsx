@@ -16,34 +16,53 @@ import theme from "@/theme/theme";
 const projectsObj = [
   {
     title: "Portfolio Website",
-    image: "/img/myWorks_img/project1.jpg",
-    live: "https://raj-landing-page.netlify.app/",
+    image: "/img/myWorks_img/portFolio.jpg",
+    live: "https://wonder-abhishek-portfolio-njs.netlify.app/",
     source: "https://example.com/ecommerce",
   },
   {
-    title: "E-Commerce App",
-    image: "/img/myWorks_img/project2.jpg",
-    live: "https://gouthami-landing-page.netlify.app/",
+    title: "Ignita Educational",
+    image: "/img/myWorks_img/AkashEducational.jpg",
+    live: "https://wonder-abhishek-portfolio-njs.netlify.app/",
     source: "https://example.com/ecommerce",
   },
   {
-    title: "E-Commerce App",
-    image: "/img/myWorks_img/project3.png",
-    live: "https://example.com/ecommerce",
+    title: "Solar Panel",
+    image: "/img/myWorks_img/solarPannel2.jpg",
+    live: "https://wonder-abhishek-portfolio-njs.netlify.app/",
     source: "https://example.com/ecommerce",
   },
   {
-    title: "E-Commerce App",
-    image: "/img/myWorks_img/project4.jpg",
-    live: "https://example.com/ecommerce",
+    title: "Career Platform",
+    image: "/img/myWorks_img/Career.jpg",
+    live: "https://wonder-abhishek-portfolio-njs.netlify.app/",
     source: "https://example.com/ecommerce",
   },
   {
-    title: "E-Commerce App",
-    image: "/img/myWorks_img/project5.jpg",
-    live: "https://example.com/ecommerce",
+    title: "Landing Page",
+    image: "/img/myWorks_img/project6.jpg",
+    live: "https://wonder-abhishek-portfolio-njs.netlify.app/",
     source: "https://example.com/ecommerce",
   },
+
+  // {
+  //   title: "FoodieHub",
+  //   image: "/img/myWorks_img/FoodieHub.jpg",
+  //   live: "https://wonder-abhishek-portfolio-njs.netlify.app/",
+  //   source: "https://example.com/ecommerce",
+  // },
+  {
+    title: "TravelMate",
+    image: "/img/myWorks_img/TravelMate.jpg",
+    live: "https://wonder-abhishek-portfolio-njs.netlify.app/",
+    source: "https://example.com/ecommerce",
+  },
+  // {
+  //   title: "HealthMate",
+  //   image: "/img/myWorks_img/HealthMate.jpg",
+  //   live: "https://wonder-abhishek-portfolio-njs.netlify.app/",
+  //   source: "https://example.com/ecommerce",
+  // },
 ];
 export default function Project() {
   const handleButtonLive = (live) => {
